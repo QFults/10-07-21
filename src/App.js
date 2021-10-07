@@ -6,13 +6,13 @@ import {
 } from 'react-router-dom'
 import Contact from './pages/Contact'
 
-const users = ['John Doe', 'Jane Doe', 'Jack Doe', 'Jenny Doe']
+const movies = ['Goodfellas', 'The Room', 'Parasite', 'Mugen Train']
 
 const App = () => {
-  const getRandomUser = () => {
-    const user = users[Math.floor(Math.random() * users.length)]
+  const getRandomMovie = () => {
+    const movie = movies[Math.floor(Math.random() * movies.length)]
     return (
-      <Link to={`/contact/${user}`}>
+      <Link to={`/contact/${movie}`}>
         Contact
       </Link>
     )
@@ -24,15 +24,15 @@ const App = () => {
           <Link to='/'>
             Home
           </Link>
-          {getRandomUser()}
+          {getRandomMovie()}
         </nav>
         <Switch>
           <Route exact path='/'>
             <h1>The Home Page.</h1>
           </Route>
-          <Route path='/contact/:user'>
+          <Route path='/contact/:movie'>
             <Contact />
-          </Route>    
+          </Route>
         </Switch>
       </div>
     </Router>
